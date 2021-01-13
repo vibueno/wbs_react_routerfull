@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 
 import Students from "./components/Students";
+import StudentProfile from "./components/StudentProfile";
 
 import axios from "axios";
 import "./styles.css";
@@ -20,6 +21,10 @@ const App = () => {
   }, []);
 
   const subjects = ["React", "HTML", "CSS", "JS"];
+
+  const getStudentInfo = (id) => {
+    return students.filter((student) => student.id === parseInt(id))[0];
+  };
 
   return (
     <div className="App">
@@ -126,7 +131,11 @@ const App = () => {
 
         <div className="block">
           <Switch>
-            <Route path="/students/">
+            <Route path="/students/:studentId">
+              <StudentProfile getStudentInfo={getStudentInfo} />
+            </Route>
+
+            <Route path="/students">
               <Students students={students} />
             </Route>
 
