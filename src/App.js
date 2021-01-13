@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 
 import Students from "./components/Students";
 
@@ -24,12 +24,12 @@ const App = () => {
   return (
     <div className="App">
       <nav>
-        <a className="link" href="#">
+        <NavLink className="link" to="/students" activeClassName="selected">
           Students
-        </a>
-        <a className="link" href="#">
+        </NavLink>
+        <NavLink className="link" to="#" activeClassName="selected">
           Student Results
-        </a>
+        </NavLink>
       </nav>
       <div className="Instructions">
         <div className="block">
