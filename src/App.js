@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
+
+import Students from "./components/Students";
+
 import axios from "axios";
 import "./styles.css";
 
@@ -121,7 +125,13 @@ const App = () => {
         </div>
 
         <div className="block">
-          <em>Code here!</em>
+          <Switch>
+            <Route path="/students/">
+              <Students students={students} />
+            </Route>
+
+            <Route path="/"></Route>
+          </Switch>
         </div>
       </div>
     </div>

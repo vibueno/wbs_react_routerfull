@@ -1,0 +1,17 @@
+.student-table {
+  margin: 30px 0 0 0;
+  border: 1px dashed white;
+}
+
+.student-table thead {
+  vertical-align: middle;
+  height: 30px;
+}
+
+.student-table th {
+  border-bottom: 1px dashed white;
+}
+
+.student-table td {
+  padding: 0 20px;
+}
