@@ -140,6 +140,10 @@ const App = () => {
               <Students students={students} />
             </Route>
 
+            <Route path="/results/:studentId">
+              <StudentResults students={students} subjects={subjects} />
+            </Route>
+
             <Route path="/results">
               <StudentResults students={students} subjects={subjects} />
             </Route>

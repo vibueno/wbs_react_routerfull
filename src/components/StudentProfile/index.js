@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 
 import "./index.css";
 
@@ -33,9 +33,10 @@ export default function StudentProfile({ getStudentInfo }) {
               <strong>Website: </strong> {studentInfo.website}
             </div>
           </div>
-        ) : (
-          ""
-        )}
+        ) : null}
+        <NavLink to={`/results/${studentInfo.id}`} className="results-link">
+          See results
+        </NavLink>
       </div>
     </>
   );
