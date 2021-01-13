@@ -3,6 +3,7 @@ import { Switch, Route, NavLink } from "react-router-dom";
 
 import Students from "./components/Students";
 import StudentProfile from "./components/StudentProfile";
+import StudentResults from "./components/StudentResults";
 
 import axios from "axios";
 import "./styles.css";
@@ -32,7 +33,7 @@ const App = () => {
         <NavLink className="link" to="/students" activeClassName="selected">
           Students
         </NavLink>
-        <NavLink className="link" to="#" activeClassName="selected">
+        <NavLink className="link" to="/results" activeClassName="selected">
           Student Results
         </NavLink>
       </nav>
@@ -137,6 +138,10 @@ const App = () => {
 
             <Route path="/students">
               <Students students={students} />
+            </Route>
+
+            <Route path="/results">
+              <StudentResults students={students} subjects={subjects} />
             </Route>
 
             <Route path="/"></Route>
