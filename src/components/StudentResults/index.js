@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 import "./index.css";
 
 export default function StudentResults({ students, subjects }) {
@@ -13,7 +15,9 @@ export default function StudentResults({ students, subjects }) {
         {students.map((student, index) => {
           return (
             <li key={index}>
-              <strong>{student.name}: </strong>
+              <NavLink to={`/students/${student.id}`} className="student-link">
+                <strong>{student.name}: </strong>
+              </NavLink>
               <ul className="grades-list">
                 {subjects.map((subject) => {
                   return (
