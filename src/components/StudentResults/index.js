@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink, useParams } from "react-router-dom";
+import ButtonGoHome from "../ButtonGoHome";
 
 import "./index.css";
 
-export default function StudentResults({ students, subjects }) {
+export default function StudentResults({ students, subjects, goHome }) {
   const { studentId } = useParams();
 
   const getRandomGrade = () => {
@@ -27,7 +28,7 @@ export default function StudentResults({ students, subjects }) {
               <ul className="grades-list">
                 {subjects.map((subject) => {
                   return (
-                    <li>
+                    <li key={`${subject}${index}`}>
                       {subject}: {getRandomGrade()}
                     </li>
                   );
@@ -37,6 +38,8 @@ export default function StudentResults({ students, subjects }) {
           );
         })}
       </ul>
+
+      <ButtonGoHome />
     </>
   );
 }

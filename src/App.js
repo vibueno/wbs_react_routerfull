@@ -39,6 +39,28 @@ const App = () => {
       </nav>
       <div className="Instructions">
         <div className="block">
+          <Switch>
+            <Route path="/students/:studentId">
+              <StudentProfile getStudentInfo={getStudentInfo} />
+            </Route>
+
+            <Route path="/students">
+              <Students students={students} />
+            </Route>
+
+            <Route path="/results/:studentId">
+              <StudentResults students={students} subjects={subjects} />
+            </Route>
+
+            <Route path="/results">
+              <StudentResults students={students} subjects={subjects} />
+            </Route>
+
+            <Route path="/"></Route>
+          </Switch>
+        </div>
+
+        <div className="block">
           For this exercise, you will have to:
           <ol>
             <li>
@@ -128,28 +150,6 @@ const App = () => {
               Help{" "}
             </a>
           </div>
-        </div>
-
-        <div className="block">
-          <Switch>
-            <Route path="/students/:studentId">
-              <StudentProfile getStudentInfo={getStudentInfo} />
-            </Route>
-
-            <Route path="/students">
-              <Students students={students} />
-            </Route>
-
-            <Route path="/results/:studentId">
-              <StudentResults students={students} subjects={subjects} />
-            </Route>
-
-            <Route path="/results">
-              <StudentResults students={students} subjects={subjects} />
-            </Route>
-
-            <Route path="/"></Route>
-          </Switch>
         </div>
       </div>
     </div>

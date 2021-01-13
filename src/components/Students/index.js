@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import ButtonGoHome from "../ButtonGoHome";
 
 import "./index.css";
 
 export default function Students({ students }) {
-  return (
+  return students ? (
     <>
       <table className="student-table">
         <thead>
@@ -57,6 +58,7 @@ export default function Students({ students }) {
           })}
         </tbody>
       </table>
+      <ButtonGoHome />
     </>
-  );
+  ) : null;
 }

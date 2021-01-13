@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, NavLink } from "react-router-dom";
+import ButtonGoHome from "../ButtonGoHome";
 
 import "./index.css";
 
@@ -8,7 +9,7 @@ export default function StudentProfile({ getStudentInfo }) {
 
   const studentInfo = getStudentInfo(studentId);
 
-  return (
+  return studentInfo ? (
     <>
       <h1>Student profile</h1>
       <div className="student-info">
@@ -38,6 +39,7 @@ export default function StudentProfile({ getStudentInfo }) {
           See results
         </NavLink>
       </div>
+      <ButtonGoHome />
     </>
-  );
+  ) : null;
 }
