@@ -11,15 +11,14 @@ export default function StudentResults({ students, subjects, goHome }) {
     return Math.floor(Math.random() * Math.floor(10));
   };
 
-  const studentsToShow = studentId
-    ? students.filter((student) => student.id === parseInt(studentId))
-    : students;
-
   return (
     <>
       <h1>Grades</h1>
       <ul className="results-list">
-        {studentsToShow.map((student, index) => {
+        {(studentId
+          ? students.filter((student) => student.id === parseInt(studentId))
+          : students
+        ).map((student, index) => {
           return (
             <li key={index}>
               <NavLink to={`/students/${student.id}`} className="student-link">
