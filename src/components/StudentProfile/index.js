@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import ButtonGoHome from "../ButtonGoHome";
 
@@ -6,8 +6,7 @@ import "./index.css";
 
 export default function StudentProfile({ getStudentInfo }) {
   const { studentId } = useParams();
-
-  const studentInfo = getStudentInfo(studentId);
+  const [studentInfo] = useState(getStudentInfo(studentId));
 
   return studentInfo ? (
     <>
