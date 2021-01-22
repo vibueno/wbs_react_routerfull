@@ -41,19 +41,25 @@ const App = () => {
         <div className="block">
           <Switch>
             <Route path="/students/:studentId">
-              <StudentProfile getStudentInfo={getStudentInfo} />
+              {students.length ? (
+                <StudentProfile getStudentInfo={getStudentInfo} />
+              ) : null}
             </Route>
 
             <Route path="/students">
-              <Students students={students} />
+              {students.length ? <Students students={students} /> : null}
             </Route>
 
             <Route path="/results/:studentId">
-              <StudentResults students={students} subjects={subjects} />
+              {students.length ? (
+                <StudentResults students={students} subjects={subjects} />
+              ) : null}
             </Route>
 
             <Route path="/results">
-              <StudentResults students={students} subjects={subjects} />
+              {students.length ? (
+                <StudentResults students={students} subjects={subjects} />
+              ) : null}
             </Route>
 
             <Route path="/"></Route>
